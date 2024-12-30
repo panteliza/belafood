@@ -27,15 +27,12 @@ const CircularSlider = () => {
 
   return (
     <div
-      className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen transition-all duration-500"
+      className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen relative overflow-hidden"
       style={{ backgroundColor: themeColors[themeIndex].light }}
     >
-      {/* Left Content */}
-     
-
       {/* Right Content */}
-      <div className="w-full md:w-1/2 flex items-center justify-center relative">
-        <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] flex items-center justify-center">
+      <div className="relative w-full md:w-1/2 flex items-center justify-center">
+        <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
           {images.map((img, index) => {
             const angle = (360 / images.length) * index;
             const isActive = index === activeIndex;
@@ -43,7 +40,7 @@ const CircularSlider = () => {
               <div
                 key={index}
                 className={`absolute flex items-center justify-center rounded-full transition-transform duration-700 ease-in-out ${
-                  isActive ? "scale-125 z-10" : "scale-100"
+                  isActive ? "scale-125 z-10" : "scale-100 z-0"
                 }`}
                 style={{
                   transform: `rotate(${angle}deg) translate(160px) rotate(-${angle}deg)`,
@@ -70,7 +67,9 @@ const CircularSlider = () => {
           />
         </div>
       </div>
-      <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+
+      {/* Left Content */}
+      <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center items-center md:items-start text-center md:text-left z-20">
         <h1
           className="text-5xl md:text-6xl font-bold mb-4"
           style={{ color: themeColors[themeIndex].dark }}
@@ -81,7 +80,12 @@ const CircularSlider = () => {
           A Culinary Journey of Freshness
         </h2>
         <p className="text-lg text-gray-500 mb-8">
-          Welcome to Bela Farmhouse & Eatery, where farm-to-table dining meets exquisite flavors. Our menu is crafted with love, featuring ingredients sourced directly from local farms to ensure every bite is fresh, wholesome, and bursting with flavor. Whether you're here for a hearty breakfast, a nourishing lunch, or a delightful dinner, we promise a culinary experience like no other.
+          Welcome to Bela Farmhouse & Eatery, where farm-to-table dining meets
+          exquisite flavors. Our menu is crafted with love, featuring
+          ingredients sourced directly from local farms to ensure every bite is
+          fresh, wholesome, and bursting with flavor. Whether you're here for a
+          hearty breakfast, a nourishing lunch, or a delightful dinner, we
+          promise a culinary experience like no other.
         </p>
         <button
           className="px-8 py-3 text-lg font-medium text-white rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition"
