@@ -20,7 +20,7 @@ const Hero = () => {
             {/* Text Content Section */}
             <div className="space-y-7 text-dark order-2 sm:order-1">
               <h1 className="text-5xl font-bold">
-                Bela Farmhouse & Eatery
+              
                 <span className="block text-secondary font-cursive text-7xl">
                   A Stay to Remember
                 </span>
@@ -34,7 +34,7 @@ const Hero = () => {
               {/* Button Section */}
               <div>
                 <button className="px-6 py-3 text-white bg-pink-500 rounded-full shadow-lg hover:bg-pink-600 transition">
-                  Learn More
+                 
                 </button>
               </div>
             </div>

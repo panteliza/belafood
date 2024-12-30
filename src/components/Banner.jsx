@@ -37,10 +37,7 @@ const Banner = () => {
       </div>
 
       {/* Button Section */}
-      <div className="flex justify-center mt-10 sm:mt-14">
-        <PrimaryButton/>
-      </div>
-
+      
       {/* Background Decorative Elements */}
       <div>
         <div className="absolute top-5 -left-16 sm:bottom-0 sm:left-0 opacity-50 sm:opacity-100">
