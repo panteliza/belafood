@@ -5,6 +5,7 @@ import Hero from '../components/Hero'
 import About from '../components/About'
 import Banner from '../components/Banner'
 import Gallery from '../components/Gallery'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
    <Hero/>
    <Gallery/>
    <About/>
+   <Footer/>
      
    
     </div>
