@@ -31,26 +31,7 @@ const CircularSlider = () => {
       style={{ backgroundColor: themeColors[themeIndex].light }}
     >
       {/* Left Content */}
-      <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
-        <h1
-          className="text-5xl md:text-6xl font-bold mb-4"
-          style={{ color: themeColors[themeIndex].dark }}
-        >
-          Bela Farmhouse & Eatery
-        </h1>
-        <h2 className="text-2xl md:text-3xl text-gray-700 mb-4">
-          A Culinary Journey of Freshness
-        </h2>
-        <p className="text-lg text-gray-500 mb-8">
-          Welcome to Bela Farmhouse & Eatery, where farm-to-table dining meets exquisite flavors. Our menu is crafted with love, featuring ingredients sourced directly from local farms to ensure every bite is fresh, wholesome, and bursting with flavor. Whether you're here for a hearty breakfast, a nourishing lunch, or a delightful dinner, we promise a culinary experience like no other.
-        </p>
-        <button
-          className="px-8 py-3 text-lg font-medium text-white rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition"
-          style={{ backgroundColor: themeColors[themeIndex].dark }}
-        >
-          Discover More
-        </button>
-      </div>
+     
 
       {/* Right Content */}
       <div className="w-full md:w-1/2 flex items-center justify-center relative">
@@ -88,6 +69,26 @@ const CircularSlider = () => {
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-full border-4 border-white shadow-xl"
           />
         </div>
+      </div>
+      <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+        <h1
+          className="text-5xl md:text-6xl font-bold mb-4"
+          style={{ color: themeColors[themeIndex].dark }}
+        >
+          Bela Farmhouse & Eatery
+        </h1>
+        <h2 className="text-2xl md:text-3xl text-gray-700 mb-4">
+          A Culinary Journey of Freshness
+        </h2>
+        <p className="text-lg text-gray-500 mb-8">
+          Welcome to Bela Farmhouse & Eatery, where farm-to-table dining meets exquisite flavors. Our menu is crafted with love, featuring ingredients sourced directly from local farms to ensure every bite is fresh, wholesome, and bursting with flavor. Whether you're here for a hearty breakfast, a nourishing lunch, or a delightful dinner, we promise a culinary experience like no other.
+        </p>
+        <button
+          className="px-8 py-3 text-lg font-medium text-white rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition"
+          style={{ backgroundColor: themeColors[themeIndex].dark }}
+        >
+          Discover More
+        </button>
       </div>
     </div>
   );
