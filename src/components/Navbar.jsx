@@ -1,21 +1,89 @@
-import React from 'react'
-//icons
-import { FiLock } from 'react-icons/fi'
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { MdOutlineClose } from "react-icons/md";
+import logo from "../assets/images/logo.JPG"; // Replace with your actual logo path
+import img1 from "../assets/images/facebook.png"; // Replace with your actual path
+import img2 from "../assets/images/googlemap.png"; // Replace with your actual path
+import img3 from "../assets/images/whatsapp.png"; // Replace with your actual path
+
+const navLinks = [
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About" },
+  { path: "/gallery", label: "Gallery" },
+  { path: "/contact", label: "Contact us" },
+];
 
 const Navbar = () => {
-  return (
-    <div className='container mx-auto pt-5 z-50  relative'>
-      <div className='flex justify-between'>
-        <p className='text-2xl font-bold'>Food Hunt</p>
-        <div className='flex w-96 gap-16 text-xl'>
-          {['Breakfast', 'Lunch', 'Dinner'].map((i) => (
-            <p className='cursor-pointer'>{i}</p>
-          ))}
-        </div>
-        <FiLock className='text-3xl cursor-pointer opacity-75 hover:opacity-100 ease-in-out duration-500 hover:drop-shadow-md' />
-      </div>
-    </div>
-  )
-}
+  const [showSidebar, setShowSidebar] = useState(false);
+  const location = useLocation(); // Hook to get the current location
 
-export default Navbar
+  const toggleSidebar = () => setShowSidebar(!showSidebar);
+
+  return (
+    <>
+      <nav className="w-full bg-white shadow-md px-6 py-4 flex justify-between items-center">
+        {/* Logo and Title Section */}
+        <div className="flex items-center space-x-4">
+          <img src={logo} alt="Bela Farm House And Eatery" className="h-[110px] w-[110px]" />
+         
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-8 text-lg">
+          {navLinks.map(({ path, label }) => (
+            <Link
+              key={path}
+              to={path}
+              className={`${
+                location.pathname === path ? "text-[#2D4591]" : "text-gray-700"
+              } font-medium hover:text-[#07A2BB] transition-all`}
+            >
+              {label}
+            </Link>
+          ))}
+          <div className="flex gap-4">
+            <img src={img1} alt="Facebook Icon" className="h-[40px] w-[40px] object-contain" />
+            <img src={img2} alt="Google Map Icon" className="h-[40px] w-[40px] object-contain" />
+            <img src={img3} alt="WhatsApp Icon" className="h-[40px] w-[40px] object-contain" />
+        
+          </div>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <HiOutlineMenuAlt2 className="text-3xl lg:hidden cursor-pointer" onClick={toggleSidebar} />
+
+        {/* Mobile Sidebar */}
+        {showSidebar && (
+          <div className="fixed top-0 left-0 w-[300px] h-full bg-white shadow-lg z-[2] flex flex-col">
+            {/* Logo in Mobile Sidebar */}
+            <div className="flex justify-between items-center px-6 py-4">
+              <img src={logo} alt="Muktinath Girls Hostel Logo" className="h-[80px] w-[90px]" />
+              <MdOutlineClose className="text-2xl cursor-pointer" onClick={toggleSidebar} />
+            </div>
+            {navLinks.map(({ path, label }) => (
+              <Link
+                key={path}
+                to={path}
+                className={`${
+                  location.pathname === path ? "text-[#099BA4]" : "text-gray-700"
+                } font-medium py-3 px-6 border-b border-gray-200 hover:bg-gray-100`}
+                onClick={toggleSidebar}
+              >
+                {label}
+              </Link>
+            ))}
+            <div className="flex justify-center gap-4 mt-4 px-6">
+              <img src={img1} alt="Facebook Icon" className="h-[40px] w-[40px] object-contain" />
+              <img src={img2} alt="Google Map Icon" className="h-[40px] w-[40px] object-contain" />
+              <img src={img3} alt="WhatsApp Icon" className="h-[40px] w-[40px] object-contain" />
+             
+            </div>
+          </div>
+        )}
+      </nav>
+    </>
+  );
+};
+
+export default Navbar;
