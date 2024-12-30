@@ -4,6 +4,8 @@ import Top from '../components/Top'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Banner from '../components/Banner'
+import Gallery from '../components/Gallery'
+
 const Home = () => {
   return (
     <div className='overflow-x-hidden'>
@@ -11,7 +13,7 @@ const Home = () => {
     <Top/>
     <Banner/>
    <Hero/>
-   <Banner/>
+   <Gallery/>
    <About/>
      
    

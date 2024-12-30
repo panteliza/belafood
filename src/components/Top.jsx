@@ -27,7 +27,7 @@ const CircularSlider = () => {
 
   return (
     <div
-      className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen relative overflow-hidden"
+      className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen  overflow-hidden"
       style={{ backgroundColor: themeColors[themeIndex].light }}
     >
       {/* Right Content */}

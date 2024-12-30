@@ -32,11 +32,7 @@ const Hero = () => {
                 Whether you are traveling for leisure or business, our hotel provides the perfect blend of modern amenities and rustic charm. Experience unparalleled hospitality and relax amidst the beauty of nature.
               </p>
               {/* Button Section */}
-              <div>
-                <button className="px-6 py-3 text-white bg-pink-500 rounded-full shadow-lg hover:bg-pink-600 transition">
-                 
-                </button>
-              </div>
+            
             </div>
 
             {/* Image Section */}

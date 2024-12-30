@@ -22,11 +22,10 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full bg-white shadow-md px-6 py-4 flex justify-between items-center">
+      <nav className="w-full fixed top-0 bg-white shadow-md px-6 py-4 flex justify-between items-center z-50">
         {/* Logo and Title Section */}
         <div className="flex items-center space-x-4">
-          <img src={logo} alt="Bela Farm House And Eatery" className="h-[110px] w-[110px]" />
-         
+          <img src={logo} alt="Bela Farmhouse & Eatery" className="h-[70px] w-[70px]" />
         </div>
 
         {/* Desktop Navigation */}
@@ -43,23 +42,32 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="flex gap-4">
-            <img src={img1} alt="Facebook Icon" className="h-[40px] w-[40px] object-contain" />
-            <img src={img2} alt="Google Map Icon" className="h-[40px] w-[40px] object-contain" />
-            <img src={img3} alt="WhatsApp Icon" className="h-[40px] w-[40px] object-contain" />
-        
+            <img src={img1} alt="Facebook Icon" className="h-[30px] w-[30px] object-contain" />
+            <img src={img2} alt="Google Map Icon" className="h-[30px] w-[30px] object-contain" />
+            <img src={img3} alt="WhatsApp Icon" className="h-[30px] w-[30px] object-contain" />
           </div>
         </div>
 
         {/* Mobile Menu Button */}
-        <HiOutlineMenuAlt2 className="text-3xl lg:hidden cursor-pointer" onClick={toggleSidebar} />
+        <HiOutlineMenuAlt2
+          className="text-3xl lg:hidden cursor-pointer"
+          onClick={toggleSidebar}
+        />
 
         {/* Mobile Sidebar */}
         {showSidebar && (
-          <div className="fixed top-0 left-0 w-[300px] h-full bg-white shadow-lg z-[2] flex flex-col">
+          <div className="fixed top-0 left-0 w-[300px] h-full bg-white shadow-lg z-50 flex flex-col">
             {/* Logo in Mobile Sidebar */}
             <div className="flex justify-between items-center px-6 py-4">
-              <img src={logo} alt="Muktinath Girls Hostel Logo" className="h-[80px] w-[90px]" />
-              <MdOutlineClose className="text-2xl cursor-pointer" onClick={toggleSidebar} />
+              <img
+                src={logo}
+                alt="Bela Farmhouse & Eatery Logo"
+                className="h-[50px] w-[50px]"
+              />
+              <MdOutlineClose
+                className="text-2xl cursor-pointer"
+                onClick={toggleSidebar}
+              />
             </div>
             {navLinks.map(({ path, label }) => (
               <Link
@@ -74,14 +82,28 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="flex justify-center gap-4 mt-4 px-6">
-              <img src={img1} alt="Facebook Icon" className="h-[40px] w-[40px] object-contain" />
-              <img src={img2} alt="Google Map Icon" className="h-[40px] w-[40px] object-contain" />
-              <img src={img3} alt="WhatsApp Icon" className="h-[40px] w-[40px] object-contain" />
-             
+              <img
+                src={img1}
+                alt="Facebook Icon"
+                className="h-[30px] w-[30px] object-contain"
+              />
+              <img
+                src={img2}
+                alt="Google Map Icon"
+                className="h-[30px] w-[30px] object-contain"
+              />
+              <img
+                src={img3}
+                alt="WhatsApp Icon"
+                className="h-[30px] w-[30px] object-contain"
+              />
             </div>
           </div>
         )}
       </nav>
+
+      {/* Spacer for Content */}
+      <div className="h-[90px]"></div>
     </>
   );
 };
