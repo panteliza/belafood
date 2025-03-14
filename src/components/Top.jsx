@@ -16,18 +16,28 @@ const CircularSlider = () => {
 
   const [themeIndex, setThemeIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % images.length);
       setThemeIndex((prev) => (prev + 1) % themeColors.length);
-    }, 2500); // Faster image transition
+    }, 2500);
     return () => clearInterval(interval);
   }, [images.length, themeColors.length]);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <div
-      className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen overflow-hidden transition-colors duration-700 ease-in-out"
+      className={`flex flex-col md:flex-row items-center justify-center w-full min-h-screen overflow-hidden transition-colors duration-700 ease-in-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      } transition-all duration-1000 ease-in-out`}
       style={{ backgroundColor: themeColors[themeIndex].light }}
     >
       {/* Right Content - Circular Slider */}
@@ -69,21 +79,25 @@ const CircularSlider = () => {
       </div>
 
       {/* Left Content - Text Section */}
-      <div className="w-full md:w-1/2 p-6 md:p-16 flex flex-col justify-center items-center md:items-start text-center md:text-left z-30 animate-slide-up">
+      <div
+        className={`w-full md:w-1/2 p-6 md:p-16 flex flex-col justify-center items-center md:items-start text-center md:text-left z-30 transition-all duration-1000 ease-in-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <h1
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight transition-all duration-700 ease-in-out"
           style={{ color: themeColors[themeIndex].dark }}
         >
           Bela Farmhouse & Eatery
         </h1>
-        <h2 className="text-2xl md:text-3xl text-gray-700 font-semibold mb-4 animate-pulse">
+        <h2 className="text-2xl md:text-3xl text-gray-700 font-semibold mb-4">
           A Culinary Journey of Freshness
         </h2>
-        <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed max-w-xl transition-opacity duration-700 ease-in-out opacity-90">
-          Welcome to <span className="font-semibold text-gray-800">Bela Farmhouse & Eatery</span>, where <span className="italic">farm-to-table dining</span> meets exquisite flavors. Our menu is crafted with love, featuring ingredients sourced directly from <span className="text-gray-700 font-medium">local farms</span> to ensure every bite is <span className="underline decoration-wavy decoration-2">fresh</span>, wholesome, and bursting with flavor. Whether you're here for a hearty breakfast, a nourishing lunch, or a delightful dinner, we promise a culinary experience like no other.
+        <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed max-w-xl transition-opacity duration-700 ease-in-out">
+          Welcome to <span className="font-semibold text-gray-800">Bela Farmhouse & Eatery</span>, where <span className="italic">farm-to-table dining</span> meets exquisite flavors. Our menu is crafted with love, featuring ingredients sourced directly from <span className="text-gray-700 font-medium">local farms</span> to ensure every bite is fresh, wholesome, and bursting with flavor. Whether you're here for a hearty breakfast, a nourishing lunch, or a delightful dinner, we promise a culinary experience like no other.
         </p>
         <button
-          className="px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out animate-bounce"
+          className="px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out"
           style={{ backgroundColor: themeColors[themeIndex].dark }}
         >
           Discover More
