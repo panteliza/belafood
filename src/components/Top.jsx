@@ -22,7 +22,7 @@ const CircularSlider = () => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % images.length);
       setThemeIndex((prev) => (prev + 1) % themeColors.length);
-    }, 2500);
+    }, 4000);
     return () => clearInterval(interval);
   }, [images.length, themeColors.length]);
 
