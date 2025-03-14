@@ -8,10 +8,12 @@ const CircularSlider = () => {
   const images = [img1, img2, img3, img4];
 
   const [themeColors, setThemeColors] = useState([
+    { light: "#E8FFE3", dark: "#3ACF50" },
+    { light: "#E3F8FF", dark: "#4DB8FF" },
     { light: "#FFF7E3", dark: "#FFB84D" },
     { light: "#FFF0F0", dark: "#FF6B6B" },
-    { light: "#E3F8FF", dark: "#4DB8FF" },
-    { light: "#E8FFE3", dark: "#3ACF50" },
+    
+    
   ]);
 
   const [themeIndex, setThemeIndex] = useState(0);
