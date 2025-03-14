@@ -31,7 +31,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-white pt-16 pb-24 px-6 sm:px-10 md:px-16 lg:px-24 bg-pink-500 ">
+    <div className="relative w-full overflow-hidden bg-white py-16 px-6 sm:px-10 md:px-16 lg:px-24">
       {/* Text Section */}
       <motion.div
         className="text-center mb-12"
@@ -114,7 +114,7 @@ const Banner = () => {
       </motion.div>
 
       <motion.div
-        className="hidden sm:block absolute bottom-[-1]  right-3  bg-yellow-200"
+        className="hidden sm:block absolute bottom-0 right-0"
         custom="bottom"
         initial="hidden"
         animate="visible"
@@ -124,7 +124,7 @@ const Banner = () => {
       </motion.div>
 
       <motion.div
-        className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 opacity-60 bg-red-300"
+        className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 opacity-60 "
         custom="top"
         initial="hidden"
         animate="visible"
