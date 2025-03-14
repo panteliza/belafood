@@ -21,17 +21,17 @@ const CircularSlider = () => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % images.length);
       setThemeIndex((prev) => (prev + 1) % themeColors.length);
-    }, 4000);
+    }, 2500); // Faster image transition
     return () => clearInterval(interval);
   }, [images.length, themeColors.length]);
 
   return (
     <div
-      className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen  overflow-hidden"
+      className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen overflow-hidden transition-colors duration-700 ease-in-out"
       style={{ backgroundColor: themeColors[themeIndex].light }}
     >
-      {/* Right Content */}
-      <div className="relative w-full md:w-1/2 flex items-center justify-center">
+      {/* Right Content - Circular Slider */}
+      <div className="relative w-full md:w-1/2 flex items-center justify-center p-4">
         <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
           {images.map((img, index) => {
             const angle = (360 / images.length) * index;
@@ -51,7 +51,7 @@ const CircularSlider = () => {
                 <img
                   src={img}
                   alt={`Dish ${index}`}
-                  className="rounded-full border-4 border-white shadow-lg"
+                  className="rounded-full border-4 border-white shadow-xl transition-all duration-700 ease-in-out hover:scale-110"
                   style={{
                     width: isActive ? "140px" : "120px",
                     height: isActive ? "140px" : "120px",
@@ -63,32 +63,27 @@ const CircularSlider = () => {
           <img
             src={images[activeIndex]}
             alt="Center Dish"
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-full border-4 border-white shadow-xl"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-full border-4 border-white shadow-2xl z-20 animate-fade-in"
           />
         </div>
       </div>
 
-      {/* Left Content */}
-      <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center items-center md:items-start text-center md:text-left z-20">
+      {/* Left Content - Text Section */}
+      <div className="w-full md:w-1/2 p-6 md:p-16 flex flex-col justify-center items-center md:items-start text-center md:text-left z-30 animate-slide-up">
         <h1
-          className="text-5xl md:text-6xl font-bold mb-4"
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight transition-all duration-700 ease-in-out"
           style={{ color: themeColors[themeIndex].dark }}
         >
           Bela Farmhouse & Eatery
         </h1>
-        <h2 className="text-2xl md:text-3xl text-gray-700 mb-4">
+        <h2 className="text-2xl md:text-3xl text-gray-700 font-semibold mb-4 animate-pulse">
           A Culinary Journey of Freshness
         </h2>
-        <p className="text-lg text-gray-500 mb-8">
-          Welcome to Bela Farmhouse & Eatery, where farm-to-table dining meets
-          exquisite flavors. Our menu is crafted with love, featuring
-          ingredients sourced directly from local farms to ensure every bite is
-          fresh, wholesome, and bursting with flavor. Whether you're here for a
-          hearty breakfast, a nourishing lunch, or a delightful dinner, we
-          promise a culinary experience like no other.
+        <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed max-w-xl transition-opacity duration-700 ease-in-out opacity-90">
+          Welcome to <span className="font-semibold text-gray-800">Bela Farmhouse & Eatery</span>, where <span className="italic">farm-to-table dining</span> meets exquisite flavors. Our menu is crafted with love, featuring ingredients sourced directly from <span className="text-gray-700 font-medium">local farms</span> to ensure every bite is <span className="underline decoration-wavy decoration-2">fresh</span>, wholesome, and bursting with flavor. Whether you're here for a hearty breakfast, a nourishing lunch, or a delightful dinner, we promise a culinary experience like no other.
         </p>
         <button
-          className="px-8 py-3 text-lg font-medium text-white rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition"
+          className="px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out animate-bounce"
           style={{ backgroundColor: themeColors[themeIndex].dark }}
         >
           Discover More
