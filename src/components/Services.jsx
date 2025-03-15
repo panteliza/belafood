@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaSpa, FaHiking, FaHotel } from "react-icons/fa";
 import { GiMountainCave, GiGreekTemple } from "react-icons/gi";
@@ -49,7 +49,7 @@ const services = [
   }
 ];
 
-// New modern animation variants
+// Animation variants
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.8, rotateY: 45 },
   visible: (i) => ({
@@ -66,13 +66,31 @@ const cardVariants = {
 };
 
 const ServicesSection = () => {
+  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
+
+  useEffect(() => {
+    const imageUrls = services.map(service => service.image);
+    let loadedCount = 0;
+
+    imageUrls.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === imageUrls.length) {
+          setAllImagesLoaded(true);
+        }
+      };
+    });
+  }, []);
+
   return (
-    <section className="w-full bg-gradient-to-b from-white via-slate-50 to-white py-16 px-4 md:px-10 lg:px-20">
+    <section className="w-full bg-white py-16 px-4 md:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <motion.h2
-          initial={{ opacity: 0, y: -50, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
           className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3"
         >
           Our Services
@@ -80,46 +98,52 @@ const ServicesSection = () => {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
+          transition={{ duration: 1, delay: 0.2 }}
           className="text-gray-600 text-lg md:text-xl"
         >
           Explore the delightful experiences Bela Farmhouse & Eatery has to offer
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            custom={index}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={cardVariants}
-          >
-            <div className="rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 bg-white overflow-hidden transform hover:scale-[1.02]">
-              <motion.img
-                whileHover={{ scale: 1.08 }}
-                transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                src={service.image}
-                alt={service.title}
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6 text-center">
-                <div className="flex justify-center items-center mb-4">
-                  {service.icon}
+      {!allImagesLoaded ? (
+        <div className="text-center text-lg text-gray-500 animate-pulse py-20">
+          Loading experiences...
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+            >
+              <div className="rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 bg-white overflow-hidden transform hover:scale-[1.02]">
+                <motion.img
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="p-6 text-center">
+                  <div className="flex justify-center items-center mb-4">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-2 text-gray-800">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-base leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-semibold mb-2 text-gray-800">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  {service.description}
-                </p>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+            </motion.div>
+          ))}
+        </div>
+      )}
     </section>
   );
 };

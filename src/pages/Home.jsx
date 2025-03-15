@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 import Delicious from '../components/DeliciousFood'
 import DirectContactUs from '../components/DirectContactUs'
 import ServicesSection from '../components/Services'
+import FoodSection from '../components/FoodSection'
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
     <Banner/>
     <Delicious/>
     <ServicesSection/>
+    <FoodSection/>
     <DirectContactUs/>
    <Hero/>
    <Gallery/>

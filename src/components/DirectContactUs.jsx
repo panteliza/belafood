@@ -33,8 +33,21 @@ const DirectContactUs = () => {
 
   return (
     <div className="w-full">
+      {/* Preload background image using an invisible <img> and a hidden preload div */}
+      <img src={bgImage} alt="preload background" style={{ display: "none" }} fetchpriority="high" />
+      <div
+        className="hidden"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          width: "100%",
+          height: "1px",
+        }}
+      />
+
       <section
-        className="relative bg-cover bg-center py-12 px-6"
+        className="relative bg-cover bg-center py-12 px-6 transition-opacity duration-700 ease-in opacity-100"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -42,6 +55,7 @@ const DirectContactUs = () => {
         }}
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Form Section */}
           <div className="bg-white p-8 rounded-lg shadow-lg w-full">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">
               Contact Bela Farm House & Eatery
@@ -118,7 +132,7 @@ const DirectContactUs = () => {
           </div>
 
           {/* Left Content */}
-          <div className="text-white text-center md:text-left">
+          <div className="text-white text-center md:text-left flex flex-col justify-center">
             <h1 className="text-4xl font-bold mb-4">Bela Farm House & Eatery</h1>
             <p className="text-lg leading-relaxed mb-4">
               Experience the serenity of nature at Bela Farm House & Eatery. Enjoy a peaceful stay in our cozy rooms and indulge in farm-fresh meals prepared with love.
