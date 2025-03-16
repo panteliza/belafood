@@ -49,7 +49,7 @@ const Hero = () => {
 
   return (
     <div>
-      <div style={BgStyle} className="relative z-[-1] py-7 px-5">
+      <div style={BgStyle} className="relative z-[-1] py-9 px-7">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 place-items-center min-h-[600px]">
             {/* Text Content Section */}
