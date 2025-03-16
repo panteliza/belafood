@@ -58,7 +58,7 @@ const FoodSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-4xl font-bold text-secondary tracking-wide leading-snug mb-4"
+          className="text-4xl font-bold text-secondary  mb-4"
         >
           Our Food Specialties
         </motion.h2>
