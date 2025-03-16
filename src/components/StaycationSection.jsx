@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 // Image Imports
 import bed1 from "../assets/images/2.JPG";
 import bed2 from "../assets/images/one.JPG";
-import woodenBg from "../assets/images/woodenbg.jpg"; // Change to .webp if available
+import woodenBg from "../assets/images/woodenbg.webp"; // Change to .webp if available
 
 // Motion Variants
 const containerVariants = {
