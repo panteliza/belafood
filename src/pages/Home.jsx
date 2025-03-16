@@ -29,7 +29,7 @@ const Home = () => {
     <DirectContactUs/>
     <About/>
     <Gallery/>
-    <Delicious/>
+   
    
     
    

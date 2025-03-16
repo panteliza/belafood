@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion"; // Framer Motion for animations
-import mainDish from "../assets/images/hero.png"; // Main dish image
-import bgGradient from "../assets/images/heroBg.png"; // Background gradient image
+
+import bgGradient from "../assets/images/heroBg.png"; // Background gradient 
+import HeroImg from "../assets/images/1.png";
 
 const BgStyle = {
   backgroundImage: `url(${bgGradient})`,
@@ -63,16 +64,16 @@ const Hero = () => {
                 variants={textChildVariants}
               >
                 <span className="block text-secondary font-cursive text-7xl">
-                  A Stay to Remember
+                Food And Stay that is unforgettable
                 </span>
               </motion.h1>
-              <motion.p className="lg:pr-64" variants={textChildVariants}>
+              <motion.p className="" variants={textChildVariants}>
                 Welcome to Bela Farmhouse & Eatery, located in the heart of
                 Kathmandu. Known for its farm-to-table dining, we now also
                 offer premium lodging services. Indulge in our fresh, locally
                 sourced dishes while enjoying a serene and comfortable stay.
               </motion.p>
-              <motion.p className="lg:pr-64" variants={textChildVariants}>
+              <motion.p className="" variants={textChildVariants}>
                 Whether you are traveling for leisure or business, our hotel
                 provides the perfect blend of modern amenities and rustic charm.
                 Experience unparalleled hospitality and relax amidst the beauty
@@ -80,19 +81,14 @@ const Hero = () => {
               </motion.p>
             </motion.div>
 
-            {/* Image Section */}
-            <motion.div
-              className="relative z-30 order-1 sm:order-2"
-              initial="hidden"
-              animate="visible"
-              variants={imageVariants}
-            >
-              <img
-                src={mainDish}
-                alt="Hero Dish"
-                className="w-full sm:scale-125 sm:translate-y-16"
-              />
-            </motion.div>
+           {/* image section */}
+                  <div className="flex flex-col justify-center">
+                    <img
+                      src={HeroImg}
+                      alt=""
+                      className="animate-spin-slow img-shadow w-[400px] mx-auto "
+                    />
+                  </div>
           </div>
         </div>
       </div>

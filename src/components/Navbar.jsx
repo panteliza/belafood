@@ -48,7 +48,7 @@ const Navbar = () => {
             <a href="https://www.instagram.com/belafarmhouseandeatery?igsh=MTJpdTJ1cWUzMnA4YQ==" target="_blank" rel="noopener noreferrer">
               <img src={img2} alt="Instagram Icon" className="h-[30px] w-[30px] object-contain" />
             </a>
-            <a href="https://wa.me/977976597452" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/9779851096133" target="_blank" rel="noopener noreferrer">
               <img src={img3} alt="WhatsApp Icon" className="h-[30px] w-[30px] object-contain" />
             </a>
           </div>
@@ -91,7 +91,7 @@ const Navbar = () => {
               <a href="https://www.instagram.com/belafarmhouseandeatery?igsh=MTJpdTJ1cWUzMnA4YQ==" target="_blank" rel="noopener noreferrer">
                 <img src={img2} alt="Instagram Icon" className="h-[30px] w-[30px] object-contain" />
               </a>
-              <a href="https://wa.me/977976597452" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/9779851096133" target="_blank" rel="noopener noreferrer">
                 <img src={img3} alt="WhatsApp Icon" className="h-[30px] w-[30px] object-contain" />
               </a>
             </div>
