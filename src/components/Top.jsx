@@ -3,6 +3,7 @@ import img1 from "../assets/images/food1.png";
 import img2 from "../assets/images/food2.png";
 import img3 from "../assets/images/food3.png";
 import img4 from "../assets/images/food4.png";
+import { Link } from "react-router-dom"; // Make sure this is at the top of your file
 
 const CircularSlider = () => {
   const images = [img1, img2, img3, img4];
@@ -98,12 +99,14 @@ const CircularSlider = () => {
         <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed max-w-xl transition-opacity duration-700 ease-in-out">
           Welcome to <span className="font-semibold text-gray-800">Bela Farmhouse & Eatery</span>, where <span className="italic">farm-to-table dining</span> meets exquisite flavors. Our menu is crafted with love, featuring ingredients sourced directly from <span className="text-gray-700 font-medium">local farms</span> to ensure every bite is fresh, wholesome, and bursting with flavor. Whether you're here for a hearty breakfast, a nourishing lunch, or a delightful dinner, we promise a culinary experience like no other.
         </p>
-        <button
-          className="px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out"
-          style={{ backgroundColor: themeColors[themeIndex].dark }}
-        >
-          Discover More
-        </button>
+        <Link to="/about">
+  <button
+    className="px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out"
+    style={{ backgroundColor: themeColors[themeIndex].dark }}
+  >
+    Discover More
+  </button>
+</Link>
       </div>
     </div>
   );

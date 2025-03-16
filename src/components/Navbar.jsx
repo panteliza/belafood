@@ -3,9 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
 import logo from "../assets/images/logo.JPG"; // Replace with your actual logo path
-import img1 from "../assets/images/facebook.png"; // Replace with your actual path
-import img2 from "../assets/images/googlemap.png"; // Replace with your actual path
-import img3 from "../assets/images/whatsapp.png"; // Replace with your actual path
+import img1 from "../assets/images/facebook.png";
+import img2 from "../assets/images/instagram.png";
+import img3 from "../assets/images/whatsapp.png";
 
 const navLinks = [
   { path: "/", label: "Home" },
@@ -16,14 +16,14 @@ const navLinks = [
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
-  const location = useLocation(); // Hook to get the current location
+  const location = useLocation();
 
   const toggleSidebar = () => setShowSidebar(!showSidebar);
 
   return (
     <>
       <nav className="w-full fixed top-0 bg-white shadow-md px-6 py-4 flex justify-between items-center z-50">
-        {/* Logo and Title Section */}
+        {/* Logo Section */}
         <div className="flex items-center space-x-4">
           <img src={logo} alt="Bela Farmhouse & Eatery" className="h-[70px] w-[70px]" />
         </div>
@@ -42,9 +42,15 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="flex gap-4">
-            <img src={img1} alt="Facebook Icon" className="h-[30px] w-[30px] object-contain" />
-            <img src={img2} alt="Google Map Icon" className="h-[30px] w-[30px] object-contain" />
-            <img src={img3} alt="WhatsApp Icon" className="h-[30px] w-[30px] object-contain" />
+          <a href="https://www.facebook.com/share/16KovBxBWu/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+              <img src={img1} alt="Facebook Icon" className="h-[30px] w-[30px] object-contain" />
+            </a>
+            <a href="https://www.instagram.com/belafarmhouseandeatery?igsh=MTJpdTJ1cWUzMnA4YQ==" target="_blank" rel="noopener noreferrer">
+              <img src={img2} alt="Instagram Icon" className="h-[30px] w-[30px] object-contain" />
+            </a>
+            <a href="https://wa.me/977976597452" target="_blank" rel="noopener noreferrer">
+              <img src={img3} alt="WhatsApp Icon" className="h-[30px] w-[30px] object-contain" />
+            </a>
           </div>
         </div>
 
@@ -57,18 +63,13 @@ const Navbar = () => {
         {/* Mobile Sidebar */}
         {showSidebar && (
           <div className="fixed top-0 left-0 w-[300px] h-full bg-white shadow-lg z-50 flex flex-col">
-            {/* Logo in Mobile Sidebar */}
+            {/* Logo and Close Button */}
             <div className="flex justify-between items-center px-6 py-4">
-              <img
-                src={logo}
-                alt="Bela Farmhouse & Eatery Logo"
-                className="h-[50px] w-[50px]"
-              />
-              <MdOutlineClose
-                className="text-2xl cursor-pointer"
-                onClick={toggleSidebar}
-              />
+              <img src={logo} alt="Bela Farmhouse & Eatery Logo" className="h-[50px] w-[50px]" />
+              <MdOutlineClose className="text-2xl cursor-pointer" onClick={toggleSidebar} />
             </div>
+
+            {/* Nav Links */}
             {navLinks.map(({ path, label }) => (
               <Link
                 key={path}
@@ -81,28 +82,24 @@ const Navbar = () => {
                 {label}
               </Link>
             ))}
+
+            {/* Social Icons in Sidebar */}
             <div className="flex justify-center gap-4 mt-4 px-6">
-              <img
-                src={img1}
-                alt="Facebook Icon"
-                className="h-[30px] w-[30px] object-contain"
-              />
-              <img
-                src={img2}
-                alt="Google Map Icon"
-                className="h-[30px] w-[30px] object-contain"
-              />
-              <img
-                src={img3}
-                alt="WhatsApp Icon"
-                className="h-[30px] w-[30px] object-contain"
-              />
+              <a href="https://www.facebook.com/share/16KovBxBWu/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                <img src={img1} alt="Facebook Icon" className="h-[30px] w-[30px] object-contain" />
+              </a>
+              <a href="https://www.instagram.com/belafarmhouseandeatery?igsh=MTJpdTJ1cWUzMnA4YQ==" target="_blank" rel="noopener noreferrer">
+                <img src={img2} alt="Instagram Icon" className="h-[30px] w-[30px] object-contain" />
+              </a>
+              <a href="https://wa.me/977976597452" target="_blank" rel="noopener noreferrer">
+                <img src={img3} alt="WhatsApp Icon" className="h-[30px] w-[30px] object-contain" />
+              </a>
             </div>
           </div>
         )}
       </nav>
 
-      {/* Spacer for Content */}
+      {/* Spacer */}
       <div className="h-[90px]"></div>
     </>
   );

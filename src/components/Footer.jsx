@@ -20,9 +20,9 @@ const Footer = () => {
               <IoLocationSharp className="text-5xl" />
             </div>
             <p>
-            Bela Namobuddha, Kavre, Nepal
+              Bela Namobuddha, Kavre, Nepal
               <br />
-            46kms from kathmandu, on the way to Bhakundebesi
+              46kms from Kathmandu, on the way to Bhakundebesi
               <br />
               560049
             </p>
@@ -33,8 +33,14 @@ const Footer = () => {
             <div className="flex justify-center">
               <MdEmail className="text-5xl" />
             </div>
-            <p>belafarmhouse@gmail.com</p>
-           
+            <p>
+              <a
+                href="mailto:belafarmhouseandeatery@gmail.com"
+                className="hover:underline"
+              >
+                belafarmhouseandeatery@gmail.com
+              </a>
+            </p>
           </div>
 
           {/* Phone Section */}
@@ -42,9 +48,16 @@ const Footer = () => {
             <div className="flex justify-center">
               <FaPhone className="text-5xl" />
             </div>
-            <p>+977 9851096133</p>
-            <p>+977 9765997452</p>
-           
+            <p>
+              <a href="tel:+9779851096133" className="hover:underline">
+                +977 9851096133
+              </a>
+            </p>
+            <p>
+              <a href="tel:+9779765997452" className="hover:underline">
+                +977 9765997452
+              </a>
+            </p>
           </div>
         </div>
 
@@ -54,7 +67,6 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="text-center text-white">
           <p>© 2025 Bela FarmHouse And Eatery. Designed And Developed By Clouds Nepal Web</p>
-        
         </div>
       </div>
     </div>
