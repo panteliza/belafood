@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Static Image Imports (1.JPG to 28.JPG)
-
+// Static Image Imports
 import Img2 from "../assets/images/2.JPG";
 import Img3 from "../assets/images/3.JPG";
 import Img4 from "../assets/images/4.JPG";
@@ -23,15 +22,13 @@ import Img18 from "../assets/images/18.JPG";
 import Img19 from "../assets/images/19.JPG";
 import Img20 from "../assets/images/20.jpeg";
 import Img21 from "../assets/images/21.jpeg";
-
 import Img23 from "../assets/images/23.jpeg";
 import Img24 from "../assets/images/24.jpeg";
 import Img25 from "../assets/images/25.jpeg";
 import Img26 from "../assets/images/26.jpeg";
 import Img27 from "../assets/images/27.jpeg";
 
-
-// Array of Images
+// Image Array
 const images = [
   Img2, Img3, Img4, Img5, Img6, Img7, Img8,
   Img9, Img10, Img11, Img12, Img13, Img14, Img15, Img16,
@@ -52,7 +49,7 @@ const Gallery = () => {
   };
 
   const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: -50 }, // slide from top
+    hidden: { opacity: 0, scale: 0.95, y: -30 },
     visible: {
       opacity: 1,
       scale: 1,
@@ -63,19 +60,19 @@ const Gallery = () => {
       },
     },
     hover: {
-      scale: 1.05,
-      transition: { duration: 0.2 },
+      scale: 1.03,
+      transition: { duration: 0.3 },
     },
   };
 
   return (
-    <div className="container mx-auto py-6">
-      <h1 className="text-secondary text-4xl font-bold text-center mb-8">
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-secondary text-4xl font-bold text-center mb-10">
         Some Glimpses
       </h1>
 
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -83,17 +80,19 @@ const Gallery = () => {
         {images.map((img, index) => (
           <motion.div
             key={index}
-            className="overflow-hidden rounded-lg shadow-md bg-gray-100"
+            className="overflow-hidden rounded-2xl shadow-lg bg-white group"
             variants={imageVariants}
             whileHover="hover"
           >
-            <img
-              src={img}
-              alt={`Gallery Image ${index + 1}`}
-              className="w-full h-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
+            <div className="aspect-[4/3] overflow-hidden">
+              <img
+                src={img}
+                alt={`Gallery Image ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </motion.div>
         ))}
       </motion.div>

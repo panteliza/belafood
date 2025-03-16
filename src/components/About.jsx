@@ -37,7 +37,7 @@ const About = () => {
 
   return (
     <div style={bgStyle}>
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 pb-16 pt-12">
         {/* Heading Animation */}
         <motion.h1
           className="pt-20 tracking-wider text-4xl font-semibold text-white text-center"
