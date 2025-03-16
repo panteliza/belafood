@@ -8,6 +8,7 @@ import whatsappImage from './assets/images/whatsapp.png'; // Import WhatsApp ima
 import './App.css'; // Add this for styling
 import AboutPage from './pages/About';
 import GalleryPage from './pages/GalleryPage';
+import ServicesPage from './pages/ServicesPage';
 const App = () => {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/about" element={<AboutPage/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/services" element={<ServicesPage />} />
           </Routes>
  {/* WhatsApp button as an image */}
         <a

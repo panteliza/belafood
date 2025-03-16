@@ -91,7 +91,7 @@ const ServicesSection = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3"
+          className="text-4xl md:text-5xl font-extrabold text-secondary tracking-wide leading-snug mb-3"
         >
           Our Services
         </motion.h2>
