@@ -28,11 +28,7 @@ const foodItems = [
     image: chineseImg,
     description: "Savory stir-fried dishes, noodles, dumplings, and bold sauces with Chinese culinary artistry."
   },
-  {
-    title: "Ornamental Food",
-    image: ornamentalImg,
-    description: "Visually elegant dishes crafted with artistic presentation and delicate flavors."
-  }
+  
 ];
 
 const animationVariants = {
