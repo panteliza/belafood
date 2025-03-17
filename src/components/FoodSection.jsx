@@ -5,7 +5,7 @@ import newariImg from "../assets/images/newarifood.jpg";
 import thakaliImg from "../assets/images/thakalifood.jpg";
 import indianImg from "../assets/images/indianfood.jpeg";
 import chineseImg from "../assets/images/chinesefood.jpg";
-import ornamentalImg from "../assets/images/ornamental food.jpeg";
+
 
 const foodItems = [
   {
