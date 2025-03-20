@@ -27,7 +27,7 @@ const reviews = [
     name: "Mateo",
     country: "Colombia",
     review:
-      "The farmhouse ambiance is so peaceful. I enjoyed every bite of the homemade pies and organic coffee. Will definitely return with family!",
+      "The farmhouse ambiance is so peaceful. I enjoyed every bite of the food from farm. Will definitely return with family!",
     rating: 5,
   },
   {
