@@ -11,18 +11,7 @@ import oldTownImg from "../assets/images/oldtown.jpg";
 import deluxeRoomImg from "../assets/images/deluxe.jpeg";
 
 const services = [
-  {
-    title: "Spa Experience",
-    icon: <FaSpa className="text-5xl text-pink-500 mb-2 animate-pulse" />,
-    image: spaImg,
-    description: "Relax and rejuvenate with our luxury spa treatments in a serene environment."
-  },
-  {
-    title: "Sauna Therapy",
-    icon: <FaSpa className="text-5xl text-orange-400 mb-2 animate-bounce" />,
-    image: saunaImg,
-    description: "Unwind in our traditional sauna rooms for complete mind and body detox."
-  },
+  
   {
     title: "Hiking Trails",
     icon: <FaHiking className="text-5xl text-green-600 mb-2 animate-pulse" />,
@@ -36,10 +25,10 @@ const services = [
     description: "Challenge yourself with thrilling mountain trekking adventures."
   },
   {
-    title: "Old Town Visit",
+    title: "Cultural Heritage Tour",
     icon: <GiGreekTemple className="text-5xl text-yellow-500 mb-2 animate-pulse" />,
     image: oldTownImg,
-    description: "Travel back in time through cultural visits to the historic old town."
+    description: "Step back in time with a visit to ancient temples and historic sites in Dhulikhel."
   },
   {
     title: "Deluxe Rooms",

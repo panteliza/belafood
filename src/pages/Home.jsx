@@ -12,6 +12,7 @@ import DirectContactUs from '../components/DirectContactUs'
 import ServicesSection from '../components/Services'
 import FoodSection from '../components/FoodSection'
 import StaycationSection from "../components/StaycationSection";
+import Reviews from "../components/Reviews";
 
 const Home = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const Home = () => {
     <Banner/>
     <ServicesSection/>
     <FoodSection/>
+    <Reviews/>
     <DirectContactUs/>
     <About/>
     <Gallery/>
