@@ -27,13 +27,16 @@ import Img24 from "../assets/images/24.jpeg";
 import Img25 from "../assets/images/25.jpeg";
 import Img26 from "../assets/images/26.jpeg";
 import Img27 from "../assets/images/27.jpeg";
+import Img28 from "../assets/images/bf1.jpeg";
+import Img29 from "../assets/images/bf2.jpeg";
+import Img30 from "../assets/images/bf3.jpeg";
 
 // Image Array
 const images = [
   Img2, Img3, Img4, Img5, Img6, Img7, Img8,
   Img9, Img10, Img11, Img12, Img13, Img14, Img15, Img16,
   Img17, Img18, Img19, Img20, Img21, Img23, Img24,
-  Img25, Img26, Img27,
+  Img25, Img26, Img27,Img28,Img29,Img30
 ];
 
 const Gallery = () => {
