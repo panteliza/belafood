@@ -13,6 +13,7 @@ import ServicesSection from '../components/Services'
 import FoodSection from '../components/FoodSection'
 import StaycationSection from "../components/StaycationSection";
 import Reviews from "../components/Reviews";
+import BelaVideos from "../components/BelaVideos";
 
 const Home = () => {
   useEffect(() => {
@@ -31,6 +32,7 @@ const Home = () => {
     <DirectContactUs/>
     <About/>
     <Gallery/>
+    <BelaVideos/>
    
    
     

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Gallery from "../components/Gallery";
 import Footer from "../components/Footer";
+import BelaVideos from "../components/BelaVideos";
 
 const GalleryPage = () => {
    useEffect(() => {
@@ -12,6 +13,7 @@ const GalleryPage = () => {
     <div>
       <Navbar/>
       <Gallery/>
+      <BelaVideos/>
       <Footer/>
     </div>
   )
